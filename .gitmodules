@@ -1,0 +1,21 @@
+[submodule "hotspot"]
+	path = hotspot
+	url = https://github.com/krichter722/jdk8u-jdk8u-hotspot.git
+[submodule "jaxp"]
+	path = jaxp
+	url = https://github.com/krichter722/jdk8u-jdk8u-jaxp.git
+[submodule "jaxws"]
+	path = jaxws
+	url = https://github.com/krichter722/jdk8u-jdk8u-jaxws.git
+[submodule "jdk"]
+	path = jdk
+	url = https://github.com/krichter722/jdk8u-jdk8u-jdk.git
+[submodule "langtools"]
+	path = langtools
+	url = https://github.com/krichter722/jdk8u-jdk8u-langtools.git
+[submodule "nashorn"]
+	path = nashorn
+	url = https://github.com/krichter722/jdk8u-jdk8u-nashorn.git
+[submodule "corba"]
+	path = corba
+	url = https://github.com/krichter722/jdk9-jdk9-corba.git
