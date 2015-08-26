@@ -1,0 +1,12 @@
+# there're no configure scripts in submodules, i.e. the complete jdk8-jdk8 project has to be build every time
+
+language: c
+compiler:
+#  - clang # not supported (`configure` fails with `configure: The C compiler (located as /usr/local/clang-3.4/bin/clang) does not seem to be the required GCC compiler.`)
+  - gcc
+before_install:
+  - sudo add-apt-repository --yes ppa:openjdk-r/ppa
+  - sudo apt-get update
+  - sudo apt-get --yes install openjdk-8-jdk systemtap-sdt-dev # `systemtap-sdt-dev` provides `sys/sdt.h`
+  - sudo apt-get --yes build-dep openjdk-8-jdk
+script: ./configure --with-boot-jdk=/usr/lib/jvm/java-8-openjdk-amd64 && make JOBS=2 && make check JOBS=2 && sudo make install # JOBS=16, JOBS=8 and JOBS=4 causes g++ to be killed because of lacking memory
